@@ -6,16 +6,15 @@ set $up 	i
 set $down 	k
 
 #Startup
-
 exec --no-startup-id 	xset -b
 exec --no-startup-id 	signal-desktop --start-in-tray
 exec --no-startup-id 	~/xkeyboard/set_custom_keymap.sh
 exec --no-startup-id    i3-battery-popup
 exec --no-startup-id    xautolock -time 10 -notify 5 -notifier '/usr/lib/xsecurelock/until_nonidle /usr/lib/xsecurelock/dimmer' -locker xsecurelock
-
+exec --no-startup-id    start-pulseaudio-x11
+exec --no-startup-id    pa-applet
 
 #Shortcuts
-
 bindsym Print                   exec --no-startup-id flameshot gui
 bindsym $mod+d                  exec --no-startup-id rofi -theme solarized -font "hack 10" -show run
 bindsym $mod+c                  exec --no-startup-id speedcrunch
@@ -31,9 +30,7 @@ bindsym $mod+Shift+m            move workspace to output up
 
 bindsym $mod+Shift+q            kill
 
-
 #Floating
-
 for_window [class="Nautilus"] floating enable resize set 1 1, move to position center
 for_window [class="SpeedCrunch"] floating enable, move to position center
 
@@ -58,16 +55,6 @@ font xft:URWGothic-Book 8
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-#exec --no-startup-id volumeicon
-exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id pa-applet
-
-################################################################################################
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -280,20 +267,15 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
 # exec xidlehook --not-when-audio --not-when-fullscreen --timer 360 "betterlockscreen -l dim" "" &
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
