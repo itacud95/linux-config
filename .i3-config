@@ -13,6 +13,7 @@ exec --no-startup-id    i3-battery-popup
 exec --no-startup-id    xautolock -time 10 -notify 5 -notifier '/usr/lib/xsecurelock/until_nonidle /usr/lib/xsecurelock/dimmer' -locker xsecurelock
 exec --no-startup-id    start-pulseaudio-x11
 exec --no-startup-id    pa-applet
+exec --no-startup-id    mate-power-manager 
 
 #Shortcuts
 bindsym Print                   exec --no-startup-id flameshot gui
