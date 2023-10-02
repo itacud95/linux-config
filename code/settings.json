@@ -1,0 +1,68 @@
+{
+    "test-executable": "module_name",
+    "test-tag": "string from catch test",
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSaveMode": "modifications",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.views.searchAndCompare.files.layout": "tree",
+    "git.detectSubmodulesLimit": 20,
+    "extensions.ignoreRecommendations": true,
+    "clangd.checkUpdates": true,
+    "clangd.arguments": [
+        "--limit-results=0",
+        "--limit-references=0",
+        "--all-scopes-completion",
+        "--background-index",
+    ],
+    "git.mergeEditor": false,
+    "files.exclude": {
+        "**/builddir/": true
+    },
+    "files.watcherExclude": {
+        "**/builddir/": true
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "debug.onTaskErrors": "abort",
+    "window.menuBarVisibility": "toggle",
+    "zenMode.centerLayout": false,
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+    "zenMode.restore": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "window.openFilesInNewWindow": "on",
+    "files.associations": {
+        "config": "i3"
+    },
+    "explorer.confirmDelete": false,
+    "C_Cpp.clang_format_path": "/opt/clang-format-static/clang-format-8",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Default Dark+",
+    "[html]": {
+        "editor.defaultFormatter": "svipas.prettier-plus"
+    },
+    "git.suggestSmartCommit": false,
+    "git.confirmSync": false,
+    "[css]": {
+        "editor.defaultFormatter": "svipas.prettier-plus"
+    },
+    "gitlens.mode.active": "zen",
+    "editor.minimap.enabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "none",
+    
+}
