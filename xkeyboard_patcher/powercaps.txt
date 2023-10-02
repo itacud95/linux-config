@@ -1,0 +1,10 @@
+   type "CUST_CAPSLOCK" {
+        modifiers= Shift+Lock+NumLock;
+        map[Shift] = Level2;
+        map[Lock] = Level3;
+        map[Shift+Lock] = Level3;
+        level_name[Level1]= "Base";
+        level_name[Level2]= "Shift";
+        level_name[Level3]= "Lock";
+        level_name[Level4]= "Tab";
+    };
