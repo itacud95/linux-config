@@ -1,0 +1,11 @@
+ln -s /usr/share/keyd/keyd.compose ~/.XCompose
+
+cd /etc/keyd
+ln -s ~/linux-config/keyd/default.conf . 
+
+to reload: 
+sudo keyd reload
+maybe also: 
+setxkbmap -option compose:menu
+
+keyd list-keys
