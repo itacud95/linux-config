@@ -1,6 +1,8 @@
 {
+    // Debug settings
     "test-executable": "module_name",
     "test-tag": "string from catch test",
+    // 
     "files.autoSave": "onFocusChange",
     "editor.formatOnSaveMode": "modifications",
     "C_Cpp.intelliSenseEngine": "disabled",
@@ -50,19 +52,11 @@
     "C_Cpp.clang_format_path": "/opt/clang-format-static/clang-format-8",
     "explorer.confirmDragAndDrop": false,
     "workbench.colorTheme": "Default Dark+",
-    "[html]": {
-        "editor.defaultFormatter": "svipas.prettier-plus"
-    },
     "git.suggestSmartCommit": false,
     "git.confirmSync": false,
-    "[css]": {
-        "editor.defaultFormatter": "svipas.prettier-plus"
-    },
     "gitlens.mode.active": "zen",
     "editor.minimap.enabled": false,
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
-    },
-    "python.formatting.provider": "none",
-    
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
 }
