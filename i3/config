@@ -77,6 +77,7 @@ for_window [title="tempterm"]                           floating enable resize s
 for_window [title="Microsoft Teams Notification"]       floating enable
 for_window [class="Nautilus"]                           floating enable resize set 1 1, move to position center
 for_window [class="(?i)matplotlib"]                     floating enable
+for_window [title="Android Emulator - "]                floating enable
 for_window [title="Battery Warning"] 			        sticky enable
 
 #Saved 
