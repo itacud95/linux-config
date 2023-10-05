@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+import subprocess
+import time
+# --- set your internal screen below (the example is my primary screen)
+internal = "eDP-1"
+#---
+
+# don't change anything below
+scr_info1 = 0
+
+# while True:
+    # time.sleep(4)
+# read the current screen setup from xrandr
+get_screens = subprocess.check_output("xrandr").decode("utf-8").splitlines()
+scr_data = [l for l in get_screens if " connected " in l]
+# count the number of connected screens
+scr_info2  = len(scr_data)
+
+resolution = "1920x1080"
+if scr_info2 != scr_info1:
+    if scr_info2 == 2:
+        external = [s.split()[0] for s in scr_data if not internal in s][0]
+        # subprocess.Popen(["xrandr", "--output", internal, "--auto", "--mode", resolution, "--output", ext, "--auto", "--mode", resolution])
+        subprocess.Popen(["xrandr", "--output", internal, "--auto", "--mode", resolution])
+        subprocess.Popen(["xrandr", "--output", external, "--auto", "--mode", resolution])
+    else:
+        subprocess.Popen(["xrandr", "--output", internal, "--auto", "--mode", resolution])
+
+scr_info1 = scr_info2
+
+'''
+xrandr --listmonitors | sed -n '1!p' | sed -e 's/\s[0-9].*\s\([a-zA-Z0-9\-]*\)$/\1/g' | 
+xargs -n 1 -- bash -xc 'xrandr --output $0 --mode '$RESOLUTION' --pos 0x0 --rotate normal'
+'''
