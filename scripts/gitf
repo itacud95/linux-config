@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+
+import argparse
+import subprocess
+import sys
+
+parser = argparse.ArgumentParser()
+parser.add_argument("search_term", help="the search term to use with grep")
+args = parser.parse_args()
+
+if len(sys.argv) != 2:
+    parser.print_help()
+    sys.exit(1)
+
+cmd = f"git --no-pager branch --all --format='%(refname:short)' | grep {args.search_term}"
+try:
+    output = subprocess.check_output(cmd, shell=True).decode().splitlines()
+except:
+    print(f"Could not find any branch containing '{args.search_term}'")
+    exit(1)
+
+for i, line in enumerate(output, start=1):
+    print(f"{i}. {line}")
+
+selection = input("Select a number (default is 1): ")
+if selection.strip() == "":
+    selection = "1"
+
+if not selection.isdigit() or int(selection) not in range(1, len(output)+1):
+    print("Invalid selection")
+    exit(1)
+
+selected_branch = output[int(selection)-1]
+
+if "origin/" in selected_branch:
+    selected_branch = selected_branch.replace("origin/", "")
+    print("Branch is an origin, removing 'origin/' from name")
+
+print(f"Checking out branch: {selected_branch}")
+checkout_cmd = f"git checkout {selected_branch}"
+
+subprocess.check_output(checkout_cmd, shell=True)
