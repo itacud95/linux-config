@@ -5,6 +5,9 @@ Plug 'cjuniet/clang-format.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 
+" https://github.com/mg979/vim-visual-multi
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 call plug#end()
 
 inoremap jj <Esc>
