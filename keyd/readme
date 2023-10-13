@@ -1,7 +1,10 @@
 ln -s /usr/share/keyd/keyd.compose ~/.XCompose
 
-cd /etc/keyd
-ln -s ~/linux-config/keyd/default.conf . 
+sudo ln -s ~/linux-config/keyd/default.conf /etc/keyd/default.conf
+
+first time: 
+sudo systemctl enable keyd
+sudo systemctl start keyd
 
 to reload: 
 sudo keyd reload
