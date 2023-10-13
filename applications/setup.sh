@@ -20,10 +20,10 @@ yay -S \
 android-apktool \
 android-sdk-cmdline-tools-latest \
 bundletool \
-clang-format-static-bin 
+clang-format-static-bin \
 cmake \
 slack-desktop \
-wireguard-tools 
+wireguard-tools \
 valgrind \
 
 # argcomplete
