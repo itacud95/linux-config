@@ -15,11 +15,6 @@ symlinker() {
     # next argument
     shift
     
-    if [ ! -d "$config_dir" ]; then
-        echo "Error: $config_dir does not exist"
-        return 1
-    fi
-    
     echo "config dir: $config_dir"
     if [ ! -d "$config_dir" ]; then
         mkdir -p "$config_dir"
