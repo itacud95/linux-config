@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# [~/.config/sway]   
+# ln -s ~/linux-config/sway/config.d/ .
+echo 'script is not working'
+exit 1
+
 config_dir=~/.config/sway/
 config_dir=${config_dir/#\~/$HOME}
 
