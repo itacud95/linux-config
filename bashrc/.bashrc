@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 PATH="$PATH:/home/jk/linux-config/scripts"
-PATH="$PATH:/home/jk/Android/Sdk/platform-tools"
+# PATH="$PATH:/home/jk/Android/Sdk/platform-tools"
 
 PATH="$PATH:/home/jk/dev/er/target/release"
 complete -C /home/jk/.cargo/bin/er er
@@ -139,8 +139,6 @@ alias clang-format='/opt/clang-format-static/clang-format-8'
 # sudo pacman -S github-cli
 alias note="GH_EDITOR=nvim gh gist edit 1740ce7dafd0c7987a210eabfff836ee"
 alias down="cd ~/Downloads"
-alias buildshield="./build.py android.libshield+all.internal-debug.arm64-v8a"
-alias buildall="./build.py android.sdkbasictest.internal-debug+all --android-abis arm64-v8a,armeabi-v7a "
 # cl = copylast
 alias cl="history | tail -2 | head -1 | cut -c8- | xclip -selection clipboard"
 alias co="tee /dev/tty | xclip -selection clipboard"
