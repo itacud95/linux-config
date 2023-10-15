@@ -112,7 +112,6 @@ if ! shopt -oq posix; then
 fi
 
 PATH="$PATH:/home/jk/linux-config/scripts"
-# PATH="$PATH:/home/jk/Android/Sdk/platform-tools"
 
 PATH="$PATH:/home/jk/dev/er/target/release"
 complete -C /home/jk/.cargo/bin/er er
@@ -218,3 +217,11 @@ eval "$(register-python-argcomplete build.py)"
 eval "$(register-python-argcomplete crash_decoder)"
 source /usr/share/bash-completion/completions/git
 source /usr/share/bash-completion/completions/python-argcomplete
+
+# Android
+ANDROID_NDK_ROOT=/opt/android/android-ndk
+export ANDROID_NDK_ROOT
+PATH="$PATH:$ANDROID_NDK_ROOT"
+
+export PATH=$PATH:$ANDROID_HOME/emulator
+# PATH="$PATH:$ANDROID_HOME/tools"
