@@ -38,7 +38,7 @@ set $powermenu ~/.config/waybar/scripts/power-menu.sh
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ## Lock Screen
-    bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
+    bindsym $mod+Shift+x exec ~/.config/sway/scripts/lockman.sh
 
 ### Key bindings
 #
@@ -207,7 +207,7 @@ bindsym $mod+r mode "resize"
 #
 # Player
 #
-    bindsym XF86AudioPlay exec playerctl play
+    bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioPause exec playerctl pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
@@ -231,9 +231,15 @@ bindsym $mod+r mode "resize"
 #
     bindsym $mod+t exec xed ~/.config/sway/cheatsheet
 
-output DP-1 scale 2
+# to set a permanent scaling on output DP-1:
+# output DP-1 scale 2
+
 workspace_auto_back_and_forth yes
 focus_follows_mouse no
 
+# yay -S cliphist rofi wtype
 bindsym $mod+g exec cliphist list | rofi -dmenu -theme solarized -font "$gui-font" -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl
 bindsym $mod+Shift+g exec cliphist wipe
+bindsym $mod+y move workspace to output right
+bindsym $mod+Shift+Return exec kitty --title tempterm
+bindsym $mod+Shift+z exec swaylock & systemctl suspend
