@@ -26,7 +26,7 @@
         "**/builddir/": true
     },
     "[shellscript]": {
-        "editor.defaultFormatter": "shakram02.bash-beautify"
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -58,5 +58,6 @@
     "editor.minimap.enabled": false,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
-    }
+    },
+    "clangd.path": "/home/jk/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd"
 }

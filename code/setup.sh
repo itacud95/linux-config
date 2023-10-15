@@ -1,38 +1,11 @@
 #!/bin/bash
 
-vscode_config_dir='~/.config/Code/User'
+# vscode_config_dir='~/.config/Code/User'
+config_dir="~/.config/Code - OSS/User/"
 
-files=(
-    "keybindings.json"
-    "launch.json"
-    "settings.json"
-)
+config_dir=${config_dir/#\~/$HOME}
 
-create_symlink_for() {
-    path="$1"
-    # Expand ~ to the home directory
-    path="${path/#\~/$HOME}"
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+source "$script_dir/../symlinker.sh"
 
-    echo "creating symlink for $path"
-
-    if [ ! -d "$path" ]; then
-        echo "directory '$path' does not exist, skipping. "
-        return
-    fi
-
-    # cd $path
-
-    for file in "${files[@]}"; do
-        target=$path/$file
-        echo "***target: $target"
-        
-        if [ -f "$target" ]; then
-            echo "Taking backup of existing file"
-            cp $target $target.bak
-            rm $target
-        fi
-        ln -s ~/linux-config/code/$file $target
-    done
-}
-
-create_symlink_for $vscode_config_dir
+symlinker "$config_dir" keybindings.json launch.json settings.json
