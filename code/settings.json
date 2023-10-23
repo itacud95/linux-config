@@ -46,7 +46,8 @@
     },
     "window.openFilesInNewWindow": "on",
     "files.associations": {
-        "config": "i3"
+        "config": "i3",
+        "*.logcat": "log"
     },
     "explorer.confirmDelete": false,
     "C_Cpp.clang_format_path": "/opt/clang-format-static/clang-format-8",
@@ -59,5 +60,6 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "clangd.path": "/home/jk/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd"
+    "clangd.path": "/home/jk/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
+    "window.zoomLevel": 1
 }
