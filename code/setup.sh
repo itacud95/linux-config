@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# vscode_config_dir='~/.config/Code/User'
-config_dir="~/.config/Code - OSS/User/"
+config_dir='~/.config/Code/User/'
+# config_dir="~/.config/Code - OSS/User/"
 
 config_dir=${config_dir/#\~/$HOME}
 

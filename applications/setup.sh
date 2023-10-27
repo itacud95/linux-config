@@ -5,6 +5,7 @@ yay
 
 # install packages
 yay -S \
+visual-studio-code-bin \
 speedcrunch \
 7-zip-full \
 cheese \

@@ -61,5 +61,99 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "clangd.path": "/home/jk/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1, 
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "(gdb) test modules-local",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/builddir/tests.any.${config:test-executable}.linux/test-${config:test-executable}",
+                "args": [
+                    "${config:test-tag}"
+                ],
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}",
+                "environment": [],
+                "externalConsole": false,
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    },
+                    {
+                        "description": "Enable break on all exceptions",
+                        "text": "catch throw",
+                        "ignoreFailures": true
+                    }
+                ],
+            },
+            {
+                "name": "(gdb) test a c++ binary",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/build/shared_modules/runner",
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}",
+                "externalConsole": false,
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    },
+                    {
+                        "description": "Enable break on all exceptions",
+                        "text": "catch throw",
+                        "ignoreFailures": true
+                    }
+                ],
+            },
+            {
+                "type": "lldb",
+                "request": "launch",
+                "name": "Debug unit tests in executable 'er'",
+                "cargo": {
+                    "args": [
+                        "test",
+                        "--no-run",
+                        "--bin=er",
+                        "--package=er",
+                    ],
+                    "filter": {
+                        "name": "er",
+                        "kind": "bin"
+                    }
+                },
+                "args": [ "--test-threads=1" ],
+                "cwd": "${workspaceFolder}"
+            }
+            ,        
+        ],
+        "inputs": [
+            {
+                "type": "pickString",
+                "id": "test-executable",
+                "description": "Select test-executable",
+                "options": [
+                    "elf_parser",
+                    "function_obfuscator",
+                    "secure_thread",
+                ],
+                "default": "elf_parser"
+            },
+            {
+                "type": "promptString",
+                "id": "test-tags",
+                "description": "One test tag without brackets",
+                "default": "" // nothing
+            }
+        ], 
+    }
 }
