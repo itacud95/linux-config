@@ -6,7 +6,6 @@
     "files.autoSave": "onFocusChange",
     "editor.formatOnSaveMode": "modifications",
     "C_Cpp.intelliSenseEngine": "disabled",
-    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     "diffEditor.ignoreTrimWhitespace": false,
     "gitlens.views.searchAndCompare.files.layout": "tree",
     "git.detectSubmodulesLimit": 20,
@@ -34,12 +33,14 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "[C++]": {
+        // "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
     "debug.onTaskErrors": "abort",
     "window.menuBarVisibility": "toggle",
     "zenMode.centerLayout": false,
     "zenMode.fullScreen": false,
     "zenMode.hideLineNumbers": false,
-    "zenMode.hideTabs": false,
     "zenMode.restore": false,
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -94,7 +95,8 @@
             },
             {
                 "name": "(gdb) test a c++ binary",
-                "type": "cppdbg",
+                "type": "lldb-mi",
+                // "type": "cppdbg",
                 "request": "launch",
                 "program": "${workspaceFolder}/build/shared_modules/runner",
                 "stopAtEntry": false,
@@ -114,6 +116,16 @@
                         "ignoreFailures": true
                     }
                 ],
+            },
+            {
+                "name": "Debug",
+                "type": "gdb",
+                "request": "launch",
+                "target": "${workspaceFolder}/app/src/main/cpp/test-runner/dist/main",
+                "arguments": " -o %debug",
+                "cwd": "${workspaceFolder}/app/src/main/cpp/test-runner/Catch2/Catch2-3.4.0",
+                // "cwd": "${workspaceRoot}",
+                "valuesFormatting": "parseText"
             },
             {
                 "type": "lldb",
@@ -155,5 +167,6 @@
                 "default": "" // nothing
             }
         ], 
-    }
+    },
+    // "C_Cpp.clang_format_path": "/usr/bin/clang-format"
 }

@@ -297,5 +297,13 @@
     {
         "key": "ctrl+alt+b",
         "command": "-workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k right",
+        "command": "-workbench.action.moveActiveEditorGroupRight"
     }
 ]
