@@ -13,10 +13,14 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
      
 # Welcome App
-exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
+# exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py      
 
 # Copy manager
+# exec wl-paste --watch clipman store
+# exec wl-paste --primary --watch cliphist store
+exec cliphist store -max-items 10
 exec wl-paste --watch cliphist store
+# exec wl-paste --primary --watch cliphist store

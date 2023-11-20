@@ -14,6 +14,8 @@
 
 for_window [app_id="xed"] focus
 
+# finding name of window:
+# swaymsg -t get_tree
 
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
@@ -46,6 +48,8 @@ for_window [app_id="xsensors"] floating enable
 for_window [title="Save File"] floating enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
 for_window [title="tempterm"] floating enable, resize set 25ppt 40ppt
+for_window [title="Bitwarden — Mozilla Firefox"] floating enable
+for_window [app_id="org.speedcrunch.speedcrunch"] floating enable, resize set 35ppt 40ppt
 
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen
