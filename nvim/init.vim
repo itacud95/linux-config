@@ -14,6 +14,9 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
 call plug#end()
 
+" nnoremap => normal mode
+" inoremap => insert mode
+
 inoremap jj <Esc>
 
 inoremap <C-s> <esc>:w<cr>                 " save files
@@ -22,6 +25,10 @@ inoremap <C-d> <esc>:wq!<cr>               " save and exit
 nnoremap <C-d> :wq!<cr>
 inoremap <C-q> <esc>:qa!<cr>               " quit discarding changes
 nnoremap <C-q> :qa!<cr>
+
+" find & navigation
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-;> <cmd>Telescope live_grep<cr>
 
 :set number
 set clipboard+=unnamedplus
