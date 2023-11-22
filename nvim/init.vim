@@ -8,8 +8,9 @@ Plug 'jiangmiao/auto-pairs'
 " https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" https://github.com/ctrlpvim/ctrlp.vim
-Plug 'ctrlpvim/ctrlp.vim'
+" https://github.com/nvim-telescope/telescope.nvim
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
 call plug#end()
 
@@ -25,4 +26,8 @@ nnoremap <C-q> :qa!<cr>
 :set number
 set clipboard+=unnamedplus
 
-let g:ctrlp_custom_ignore = 'builddir\|dist\|third_party\|git'
+" https://github.com/nvim-telescope/telescope.nvim
+nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap fg <cmd>Telescope live_grep<cr>
+nnoremap fb <cmd>Telescope buffers<cr>
+" nnoremap fh <cmd>Telescope help_tags<cr>
