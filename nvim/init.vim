@@ -3,10 +3,13 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'cjuniet/clang-format.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" https://github.com/ctrlpvim/ctrlp.vim
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -21,3 +24,5 @@ nnoremap <C-q> :qa!<cr>
 
 :set number
 set clipboard+=unnamedplus
+
+let g:ctrlp_custom_ignore = 'builddir\|dist\|third_party\|git'
