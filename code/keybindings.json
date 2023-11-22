@@ -39,7 +39,7 @@
         "command": "workbench.action.navigateForward"
     },
     {
-        "key": "ctrl+i",
+        "key": "ctrl+shift+i",
         "command": "editor.action.formatChanges"
     },
     {
@@ -201,7 +201,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+shift+i",
+        "key": "ctrl+i",
         "command": "workbench.action.focusFirstEditorGroup"
     },
     {
