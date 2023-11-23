@@ -26,12 +26,15 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'navarasu/onedark.nvim'
+
 call plug#end()
 
 " nnoremap => normal mode
 " inoremap => insert mode
 "
 
+colorscheme onedark
 set scrolloff=10
 
 inoremap jj <Esc>
