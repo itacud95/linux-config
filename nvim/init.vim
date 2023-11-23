@@ -28,11 +28,15 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'navarasu/onedark.nvim'
 
+Plug 'Pocco81/auto-save.nvim'
+
 call plug#end()
 
 " nnoremap => normal mode
 " inoremap => insert mode
 "
+
+lua require("auto-save").setup({})
 
 colorscheme onedark
 set scrolloff=10
