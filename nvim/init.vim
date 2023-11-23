@@ -31,6 +31,7 @@ call plug#end()
 " inoremap => insert mode
 "
 
+set scrolloff=10
 
 inoremap jj <Esc>
 
