@@ -1,7 +1,5 @@
-
-- `gd` go to definition
-    - `n` next
-    - `N` prev
+`gd`    -> go to definition 
+`dt'`   -> delete until '
 
 
 

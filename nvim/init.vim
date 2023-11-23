@@ -24,6 +24,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
