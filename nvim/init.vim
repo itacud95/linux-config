@@ -37,6 +37,14 @@ call plug#end()
 colorscheme onedark
 set scrolloff=10
 
+" tab
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Map <leader> to a space
+let mapleader = "\<Space>"
+
 inoremap jj <Esc>
 
 inoremap <C-s> <esc>:w<cr>                 " save files
