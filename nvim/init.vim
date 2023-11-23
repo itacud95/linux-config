@@ -12,6 +12,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
 
 " nnoremap => normal mode
@@ -38,3 +40,5 @@ nnoremap ff <cmd>Telescope find_files<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 " nnoremap fh <cmd>Telescope help_tags<cr>
+
+lua require("lspconfig").clangd.setup({})
