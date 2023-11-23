@@ -3,7 +3,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'cjuniet/clang-format.vim'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 
 " https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -19,10 +19,18 @@ Plug 'neovim/nvim-lspconfig'
 " Depends on nodejs: yay -S nodejs
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+
 call plug#end()
 
 " nnoremap => normal mode
 " inoremap => insert mode
+"
+
 
 inoremap jj <Esc>
 
@@ -45,7 +53,13 @@ nnoremap ff <cmd>Telescope find_files<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 " nnoremap fh <cmd>Telescope help_tags<cr>
+" NERDTree
+nnoremap fe <cmd>NERDTreeToggle<cr>
+nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 
 lua require("lspconfig").clangd.setup({})
 
 nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
+
+luafile /home/jk/linux-config/nvim/complete.lua
+
