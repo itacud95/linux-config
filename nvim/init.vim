@@ -14,6 +14,11 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
 Plug 'neovim/nvim-lspconfig'
 
+" ConfigFile: ~/.config/nvim/coc-settings.json
+" ConfigCmd: :CocConfig
+" Depends on nodejs: yay -S nodejs
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " nnoremap => normal mode
@@ -42,3 +47,5 @@ nnoremap fb <cmd>Telescope buffers<cr>
 " nnoremap fh <cmd>Telescope help_tags<cr>
 
 lua require("lspconfig").clangd.setup({})
+
+nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
