@@ -23,7 +23,8 @@ end
 -- When the <Enter> key is pressed while the popup menu is visible, it only
 -- hides the menu. Use this mapping to close the menu and also start a new
 -- line.
-map{expr = true, 'i', "<cr>", 'pumvisible() ? "\\<C-y>" : "\\<cr>"'}
+-- map{expr = true, 'i', "<cr>", 'pumvisible() ? "\\<C-y>" : "\\<cr>"'}
+-- map{expr = true, 'i', "<cr>", 'pumvisible() ? "\\<C-y>" : "\\<Tab>"'}
 -- Use <TAB> to select the popup menu:
 map{expr = true, 'i', "<Tab>", 'pumvisible() ? "\\<C-n>" : "\\<Tab>"'}
 map{expr = true, 'i', "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"'}

@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'navarasu/onedark.nvim'
 
 Plug 'Pocco81/auto-save.nvim'
+Plug 'nvim-telescope/telescope-frecency.nvim'
 
 call plug#end()
 
@@ -37,7 +38,7 @@ call plug#end()
 "
 
 lua require("auto-save").setup({})
-
+lua require("telescope").load_extension("frecency")
 colorscheme onedark
 set scrolloff=10
 
@@ -66,7 +67,8 @@ nnoremap <C-;> <cmd>Telescope live_grep<cr>
 set clipboard+=unnamedplus
 
 " https://github.com/nvim-telescope/telescope.nvim
-nnoremap ff <cmd>Telescope find_files<cr>
+" nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap ff <cmd>Telescope frecency workspace=CWD<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 " nnoremap fh <cmd>Telescope help_tags<cr>
@@ -78,6 +80,11 @@ lua require("lspconfig").clangd.setup({})
 
 nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
+nnoremap gf <cmd>lua vim.lsp.buf.format()<cr>
+nnoremap ga <cmd>lua vim.lsp.buf.code_action()<cr>
 
-luafile /home/jk/linux-config/nvim/complete.lua
+" maybe no longer used
+" luafile /home/jk/linux-config/nvim/complete.lua
+
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
