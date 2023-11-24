@@ -22,7 +22,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
@@ -30,6 +30,8 @@ Plug 'navarasu/onedark.nvim'
 
 Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
+
+Plug 'numToStr/Comment.nvim'
 
 call plug#end()
 
@@ -39,6 +41,10 @@ call plug#end()
 
 lua require("auto-save").setup({})
 lua require("telescope").load_extension("frecency")
+
+" https://github.com/numToStr/Comment.nvim
+lua require("Comment").setup()
+
 colorscheme onedark
 set scrolloff=10
 
