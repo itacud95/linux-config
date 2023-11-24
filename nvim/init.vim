@@ -71,12 +71,13 @@ nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 " nnoremap fh <cmd>Telescope help_tags<cr>
 " NERDTree
-nnoremap fe <cmd>NERDTreeToggle<cr>
+nnoremap fe <cmd>NERDTreeFind %<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 
 lua require("lspconfig").clangd.setup({})
 
 nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
+nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
 
 luafile /home/jk/linux-config/nvim/complete.lua
 
