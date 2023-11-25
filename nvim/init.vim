@@ -75,10 +75,11 @@ set clipboard+=unnamedplus
 
 " https://github.com/nvim-telescope/telescope.nvim
 nnoremap fa <cmd>Telescope find_files<cr>
-nnoremap ff <cmd>Telescope oldfiles<cr>
+nnoremap ff <cmd>Telescope find_files find_command=rg,--ignore,--files,--sort,accessed<cr>
+nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
-" nnoremap fh <cmd>Telescope help_tags<cr>
+
 " NERDTree
 nnoremap fe <cmd>NERDTreeFind %<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
