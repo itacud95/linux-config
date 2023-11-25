@@ -41,6 +41,7 @@ call plug#end()
 
 lua require("auto-save").setup({})
 lua require("telescope").load_extension("frecency")
+luafile /home/jk/linux-config/nvim/telescope.lua
 
 " https://github.com/numToStr/Comment.nvim
 lua require("Comment").setup()
