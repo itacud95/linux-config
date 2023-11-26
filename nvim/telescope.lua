@@ -1,8 +1,13 @@
 require("telescope").setup({
-  pickers = {
-    oldfiles = {
-      cwd_only = true,
-    }
-  },
+    extensions = {
+        frecency = {
+            previewer = false,
+        },
+    },
+    pickers = {
+        oldfiles = {
+            cwd_only = true,
+        }
+    },
 })
 

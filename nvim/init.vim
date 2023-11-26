@@ -75,7 +75,9 @@ set clipboard+=unnamedplus
 
 " https://github.com/nvim-telescope/telescope.nvim
 nnoremap fa <cmd>Telescope find_files<cr>
-nnoremap ff <cmd>Telescope find_files find_command=rg,--ignore,--files,--sort,accessed<cr>
+nnoremap fr <cmd>Telescope find_files find_command=rg,--ignore,--files,--sort,accessed<cr>
+nnoremap ff <cmd>Telescope frecency workspace=CWD previewer=false<cr>
+" nnoremap ff <cmd>Telescope find_files find_command=rg,--files,--ignore,|,xargs,stat,--format='%X %n',|,sort,-n<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
@@ -83,6 +85,7 @@ nnoremap fb <cmd>Telescope buffers<cr>
 " NERDTree
 nnoremap fe <cmd>NERDTreeFind %<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
+let NERDTreeQuitOnOpen=1
 
 lua require("lspconfig").clangd.setup({})
 
