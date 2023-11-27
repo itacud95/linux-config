@@ -53,7 +53,7 @@
     "explorer.confirmDelete": false,
     "C_Cpp.clang_format_path": "/opt/clang-format-static/clang-format-8",
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "AposThemeGray",
     "git.suggestSmartCommit": false,
     "git.confirmSync": false,
     "gitlens.mode.active": "zen",
@@ -61,7 +61,7 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "clangd.path": "/home/jk/.config/Code - OSS/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
+    "clangd.path": "/home/jk/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
     "window.zoomLevel": 1, 
     "launch": {
         "version": "0.2.0",

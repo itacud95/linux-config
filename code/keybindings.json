@@ -7,11 +7,7 @@
         "key": "ctrl+t ctrl+l",
         "command": "workbench.action.moveEditorToLeftGroup"
     },
-    {
-        "key": "ctrl+e",
-        "command": "workbench.view.explorer",
-        "when": "viewContainer.workbench.view.explorer.enabled"
-    },
+    
     {
         "key": "ctrl+m",
         "command": "workbench.action.openPreviousEditorFromHistory"
@@ -201,10 +197,6 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+i",
-        "command": "workbench.action.focusFirstEditorGroup"
-    },
-    {
         "key": "ctrl+k ctrl+k",
         "command": "workbench.action.keepEditor"
     },
@@ -240,11 +232,6 @@
         "key": "ctrl+shift+\\",
         "command": "-editor.action.jumpToBracket",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "workbench.files.action.collapseExplorerFolders", 
-        "when": "sideBarFocus"
     },
     {
         "key": "ctrl+shift+f",
@@ -305,5 +292,53 @@
     {
         "key": "ctrl+k right",
         "command": "-workbench.action.moveActiveEditorGroupRight"
-    }
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.collapseExplorerFolders", 
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+        "when": "accessibilityHelpIsShown"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-inlineChat.start",
+        "when": "inlineChatHasProvider && !editorReadonly"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-focusSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-toggleSuggestionDetails",
+        "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+    },
 ]
