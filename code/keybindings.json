@@ -305,6 +305,11 @@
     },
     {
         "key": "ctrl+e",
+        "command": "workbench.files.action.showActiveFileInExplorer",
+        "when": "!sideBarFocus"
+    },
+    {
+        "key": "ctrl+e",
         "command": "-editor.action.toggleScreenReaderAccessibilityMode",
         "when": "accessibilityHelpIsShown"
     },
@@ -340,5 +345,9 @@
         "key": "ctrl+i",
         "command": "-toggleSuggestionDetails",
         "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+y ctrl+y",
+        "command": "gitlens.views.searchAndCompare.clear"
     },
 ]
