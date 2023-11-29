@@ -296,7 +296,7 @@
     {
         "key": "ctrl+e",
         "command": "workbench.files.action.showActiveFileInExplorer",
-        "when": "!sideBarFocus"
+        "when": "!sideBarFocus && openEditorsFocus"
     },
     {
         "key": "ctrl+e",

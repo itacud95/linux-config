@@ -1,7 +1,4 @@
 {
-    // Debug settings
-    "test-executable": "module_name",
-    "test-tag": "string from catch test",
     // 
     "files.autoSave": "onFocusChange",
     "editor.formatOnSaveMode": "modifications",
@@ -48,12 +45,13 @@
     "window.openFilesInNewWindow": "on",
     "files.associations": {
         "config": "i3",
-        "*.logcat": "log"
+        "*.logcat": "log",
+        "*.conf": "json"
     },
     "explorer.confirmDelete": false,
     "C_Cpp.clang_format_path": "/opt/clang-format-static/clang-format-8",
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "AposThemeGray",
+    "workbench.colorTheme": "Default Dark+",
     "git.suggestSmartCommit": false,
     "git.confirmSync": false,
     "gitlens.mode.active": "zen",
@@ -67,86 +65,13 @@
         "version": "0.2.0",
         "configurations": [
             {
-                "name": "(gdb) test modules-local",
-                "type": "cppdbg",
-                "request": "launch",
-                "program": "${workspaceFolder}/builddir/tests.any.${config:test-executable}.linux/test-${config:test-executable}",
-                "args": [
-                    "${config:test-tag}"
-                ],
-                "stopAtEntry": false,
-                "cwd": "${workspaceFolder}",
-                "environment": [],
-                "externalConsole": false,
-                "MIMode": "gdb",
-                "miDebuggerPath": "gdb",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "text": "-enable-pretty-printing",
-                        "ignoreFailures": true
-                    },
-                    {
-                        "description": "Enable break on all exceptions",
-                        "text": "catch throw",
-                        "ignoreFailures": true
-                    }
-                ],
-            },
-            {
-                "name": "(gdb) test a c++ binary",
+                // yay -S lldb lldb-mi
+                "name": "(lldb) test a c++ binary",
                 "type": "lldb-mi",
-                // "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/build/shared_modules/runner",
-                "stopAtEntry": false,
-                "cwd": "${workspaceFolder}",
-                "externalConsole": false,
-                "MIMode": "gdb",
-                "miDebuggerPath": "gdb",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "text": "-enable-pretty-printing",
-                        "ignoreFailures": true
-                    },
-                    {
-                        "description": "Enable break on all exceptions",
-                        "text": "catch throw",
-                        "ignoreFailures": true
-                    }
-                ],
+                "target": "./dist/tests.any.elf_parser.linux/test-elf_parser_bin",
+                "cwd": "${workspaceRoot}",
             },
-            {
-                "name": "Debug",
-                "type": "gdb",
-                "request": "launch",
-                "target": "${workspaceFolder}/app/src/main/cpp/test-runner/dist/main",
-                "arguments": " -o %debug",
-                "cwd": "${workspaceFolder}/app/src/main/cpp/test-runner/Catch2/Catch2-3.4.0",
-                // "cwd": "${workspaceRoot}",
-                "valuesFormatting": "parseText"
-            },
-            {
-                "type": "lldb",
-                "request": "launch",
-                "name": "Debug unit tests in executable 'er'",
-                "cargo": {
-                    "args": [
-                        "test",
-                        "--no-run",
-                        "--bin=er",
-                        "--package=er",
-                    ],
-                    "filter": {
-                        "name": "er",
-                        "kind": "bin"
-                    }
-                },
-                "args": [ "--test-threads=1" ],
-                "cwd": "${workspaceFolder}"
-            }
-            ,        
         ],
         "inputs": [
             {
@@ -168,5 +93,4 @@
             }
         ], 
     },
-    // "C_Cpp.clang_format_path": "/usr/bin/clang-format"
 }
