@@ -238,10 +238,6 @@
         "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
     },
     {
-        "key": "f19",
-        "command": "search.action.focusSearchList"
-    },
-    {
         "key": "shift+f8",
         "command": "-editor.action.marker.prevInFiles",
         "when": "editorFocus"
@@ -340,4 +336,12 @@
         "key": "ctrl+y ctrl+y",
         "command": "gitlens.views.searchAndCompare.clear"
     },
+    {
+        "key": "f19",
+        "command": "extension.searchUnderCursor"
+    },
+    // {
+    //     "key": "f19",
+    //     "command": "search.action.focusSearchList"
+    // },
 ]
