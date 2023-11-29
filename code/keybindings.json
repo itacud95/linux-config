@@ -72,16 +72,6 @@
         "command": "runInSearchPanel"
     },
     {
-        "key": "f15",
-        "command": "editor.action.previousSelectionMatchFindAction",
-        "when": "editorFocus"
-    },
-    {
-        "key": "f16",
-        "command": "editor.action.nextSelectionMatchFindAction",
-        "when": "editorFocus"
-    },
-    {
         "key": "ctrl+f3",
         "command": "-editor.action.nextSelectionMatchFindAction",
         "when": "editorFocus"
