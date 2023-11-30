@@ -13,5 +13,5 @@ if [ -f "$bashrc_location" ]; then
     rm $bashrc_location
 fi
 
-ln -s $script_dir/.bashrc $bashrc_location
+ln -s $script_dir/bashrc $bashrc_location
 
