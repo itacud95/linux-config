@@ -38,6 +38,9 @@ Plug 'numToStr/Comment.nvim'
 Plug 'ibhagwan/fzf-lua'
 Plug 'gennaro-tedesco/nvim-possession'
 
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+
 call plug#end()
 
 " nnoremap => normal mode
@@ -53,6 +56,7 @@ lua require("telescope").load_extension("frecency")
 
 luafile /home/jk/linux-config/nvim/possession.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
+luafile /home/jk/linux-config/nvim/lualine.lua
 
 " Configure nvim-possession
 let g:nvim_possession_enable_default_mappings = 0
