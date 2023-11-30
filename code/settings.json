@@ -1,5 +1,6 @@
 {
     // 
+    "window.titleBarStyle": "custom",
     "files.autoSave": "onFocusChange",
     "editor.formatOnSaveMode": "modifications",
     "C_Cpp.intelliSenseEngine": "disabled",

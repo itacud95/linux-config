@@ -229,5 +229,5 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 alias strip="/opt/android/android-ndk-r22b/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip"
 alias objcopy="/opt/android/android-ndk-r22b/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-objcopy"
-alias code="vscodium"
+# alias code="vscodium"
 alias ghidra="_JAVA_AWT_WM_NONREPARENTING=1 ~/dev/ghidra/ghidraRun"

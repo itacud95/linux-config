@@ -332,10 +332,10 @@
         "command": "-toggleSuggestionDetails",
         "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
     },
-    {
-        "key": "ctrl+y ctrl+y",
-        "command": "gitlens.views.searchAndCompare.clear"
-    },
+    // {
+    //     "key": "ctrl+y ctrl+y",
+    //     "command": "gitlens.views.searchAndCompare.clear"
+    // },
     {
         "key": "f19",
         "command": "extension.searchUnderCursor"
