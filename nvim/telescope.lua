@@ -12,6 +12,13 @@ require("telescope").setup({
         oldfiles = {
             cwd_only = true,
         },
+        buffers = {
+            mappings = {
+                i = {
+                    ["<c-d>"] = "delete_buffer",
+                },
+            },
+        },
     },
 })
 
