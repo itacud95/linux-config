@@ -85,6 +85,7 @@ inoremap <C-s> <esc>:w<cr>                 " save files
 nnoremap <C-s> :w<cr>
 inoremap <C-d> <esc>:wq!<cr>               " save and exit
 nnoremap <C-d> :wq!<cr>
+nnoremap <C-w> :wq!<cr>
 inoremap <C-q> <esc>:qa!<cr>               " quit discarding changes
 nnoremap <C-q> :qa!<cr>
 
@@ -103,6 +104,10 @@ nnoremap ff <cmd>Telescope frecency workspace=CWD previewer=false<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
+
+" tabs
+noremap <C-S-PageUp>  :-tabmove<cr>
+noremap <C-S-PageDown> :+tabmove<cr>
 
 " NERDTree
 nnoremap fe <cmd>NERDTreeFind %<cr>
