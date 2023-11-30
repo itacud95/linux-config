@@ -226,6 +226,7 @@ PATH="$PATH:$ANDROID_NDK_ROOT"
 export PATH=$PATH:$ANDROID_HOME/emulator
 # PATH="$PATH:$ANDROID_HOME/tools"
 
+alias dup="kitty . &"
 
 alias strip="/opt/android/android-ndk-r22b/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip"
 alias objcopy="/opt/android/android-ndk-r22b/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-objcopy"

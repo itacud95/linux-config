@@ -33,15 +33,35 @@ Plug 'nvim-telescope/telescope-frecency.nvim'
 
 Plug 'numToStr/Comment.nvim'
 
+Plug 'numToStr/Comment.nvim'
+
+Plug 'ibhagwan/fzf-lua'
+Plug 'gennaro-tedesco/nvim-possession'
+
 call plug#end()
 
 " nnoremap => normal mode
 " inoremap => insert mode
 "
 
+" Map <leader> to a space
+let mapleader = "\<Space>"
+
+
 lua require("auto-save").setup({})
 lua require("telescope").load_extension("frecency")
+
+luafile /home/jk/linux-config/nvim/possession.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
+
+" Configure nvim-possession
+let g:nvim_possession_enable_default_mappings = 0
+
+" Map commands to leader key
+nnoremap <leader>sl :lua require("nvim-possession").list()<CR>
+nnoremap <leader>sn :lua require("nvim-possession").new()<CR>
+nnoremap <leader>su :lua require("nvim-possession").update()<CR>
+nnoremap <leader>sd :lua require("nvim-possession").delete()<CR>
 
 " https://github.com/numToStr/Comment.nvim
 lua require("Comment").setup()
@@ -54,8 +74,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Map <leader> to a space
-let mapleader = "\<Space>"
 
 inoremap jj <Esc>
 
