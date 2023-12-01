@@ -2,7 +2,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'cjuniet/clang-format.vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'preservim/nerdtree'
 
 " https://github.com/mg979/vim-visual-multi
@@ -57,6 +57,7 @@ lua require("telescope").load_extension("frecency")
 luafile /home/jk/linux-config/nvim/possession.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
 luafile /home/jk/linux-config/nvim/lualine.lua
+luafile /home/jk/linux-config/nvim/autopairs.lua
 
 " Configure nvim-possession
 let g:nvim_possession_enable_default_mappings = 0
