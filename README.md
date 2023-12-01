@@ -19,3 +19,8 @@ cd /opt/android-sdk
 sudo chown -R `id -un`:`id -gn` .
 
 ```
+
+```
+sudo ydotoold &
+while true; do sudo ydotool mousemove --absolute $RANDOM $RANDOM; sleep 1; done
+```
