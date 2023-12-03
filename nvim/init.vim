@@ -43,9 +43,17 @@ Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
 
-" nnoremap => normal mode
-" inoremap => insert mode
-"
+" chat gpt auto-trim-whitespace
+function! TrimWhitespace()
+    let l:save_cursor = getpos(".")
+    keeppatterns %s/\s\+$//e
+    call setpos('.', l:save_cursor)
+endfunction
+augroup TrimWhitespace
+    autocmd!
+    autocmd BufWritePre * call TrimWhitespace()
+augroup END
+
 
 " Map <leader> to a space
 let mapleader = "\<Space>"
