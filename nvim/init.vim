@@ -94,6 +94,9 @@ nnoremap <C-q> :qa!<cr>
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-;> <cmd>Telescope live_grep<cr>
 
+" stop search highlight
+nnoremap <Leader>/ :noh<cr>.
+
 :set number
 set clipboard+=unnamedplus
 
