@@ -26,7 +26,11 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
+" themes
 Plug 'navarasu/onedark.nvim'
+Plug 'kepano/flexoki-neovim'
+Plug 'joshdick/onedark.vim'
+Plug 'ellisonleao/gruvbox.nvim'
 
 Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
@@ -40,6 +44,7 @@ Plug 'gennaro-tedesco/nvim-possession'
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'kdheepak/lazygit.nvim'
 
 call plug#end()
 
@@ -80,6 +85,10 @@ nnoremap <leader>sd :lua require("nvim-possession").delete()<CR>
 lua require("Comment").setup()
 
 colorscheme onedark
+" colorscheme flexoki-dark
+" colorscheme onedark
+set background=dark
+colorscheme gruvbox
 set scrolloff=10
 
 " tab
@@ -94,7 +103,7 @@ inoremap <C-s> <esc>:w<cr>                 " save files
 nnoremap <C-s> :w<cr>
 inoremap <C-d> <esc>:wq!<cr>               " save and exit
 nnoremap <C-d> :wq!<cr>
-nnoremap <C-w> :wq!<cr>
+" nnoremap <C-w> :wq!<cr>
 inoremap <C-q> <esc>:qa!<cr>               " quit discarding changes
 nnoremap <C-q> :qa!<cr>
 
@@ -104,6 +113,8 @@ nnoremap <C-;> <cmd>Telescope live_grep<cr>
 
 " stop search highlight
 nnoremap <Leader>/ :noh<cr>.
+" jump back and forth
+nnoremap mm <C-6>
 
 :set number
 set clipboard+=unnamedplus
@@ -127,6 +138,8 @@ nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 let NERDTreeQuitOnOpen=1
 
 lua require("lspconfig").clangd.setup({})
+" lua require("lspconfig").bashls.setup({})
+" lua require('lspconfig').cmake.setup({})
 
 nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>

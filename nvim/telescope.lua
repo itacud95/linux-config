@@ -4,6 +4,13 @@ require("telescope").setup({
             previewer = false,
         },
     },
+    defaults = {
+        mappings = {
+            i = {
+                ["<c-r>"] = require("telescope.actions").select_vertical,
+            },
+        },
+    },
     pickers = {
         find_files = {
             -- hidden = true,
