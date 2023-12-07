@@ -33,7 +33,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'ellisonleao/gruvbox.nvim'
 
 Plug 'Pocco81/auto-save.nvim'
-Plug 'nvim-telescope/telescope-frecency.nvim'
+" Plug 'nvim-telescope/telescope-frecency.nvim'
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
 Plug 'numToStr/Comment.nvim'
 
@@ -65,7 +66,8 @@ let mapleader = "\<Space>"
 
 
 lua require("auto-save").setup({})
-lua require("telescope").load_extension("frecency")
+" lua require("telescope").load_extension("frecency")
+lua require("telescope").load_extension("live_grep_args")
 
 luafile /home/jk/linux-config/nvim/possession.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
@@ -84,7 +86,7 @@ nnoremap <leader>sd :lua require("nvim-possession").delete()<CR>
 " https://github.com/numToStr/Comment.nvim
 lua require("Comment").setup()
 
-colorscheme onedark
+" colorscheme onedark
 " colorscheme flexoki-dark
 " colorscheme onedark
 set background=dark
@@ -107,6 +109,9 @@ nnoremap <C-d> :wq!<cr>
 inoremap <C-q> <esc>:qa!<cr>               " quit discarding changes
 nnoremap <C-q> :qa!<cr>
 
+" delete without copy
+nnoremap <leader>d "_dd
+
 " find & navigation
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-;> <cmd>Telescope live_grep<cr>
@@ -122,7 +127,7 @@ set clipboard+=unnamedplus
 " https://github.com/nvim-telescope/telescope.nvim
 nnoremap fa <cmd>Telescope find_files<cr>
 nnoremap fr <cmd>Telescope find_files find_command=rg,--ignore,--files,--sort,accessed<cr>
-nnoremap ff <cmd>Telescope frecency workspace=CWD previewer=false<cr>
+" nnoremap ff <cmd>Telescope frecency workspace=CWD previewer=false<cr>
 " nnoremap ff <cmd>Telescope find_files find_command=rg,--files,--ignore,|,xargs,stat,--format='%X %n',|,sort,-n<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
@@ -145,6 +150,7 @@ nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap gf <cmd>lua vim.lsp.buf.format()<cr>
 nnoremap ga <cmd>lua vim.lsp.buf.code_action()<cr>
+nnoremap go <cmd>ClangdSwitchSourceHeader<cr>
 
 " maybe no longer used
 " luafile /home/jk/linux-config/nvim/complete.lua
