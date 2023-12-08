@@ -2,6 +2,8 @@ require("telescope").setup({
     extensions = {
         frecency = {
             previewer = false,
+            -- ignore_patterns is not respected.
+            ignore_patterns = { "*.git/*", "*/tmp/*", "*/third_party/*", "**/builddir/**" },
         },
     },
     defaults = {

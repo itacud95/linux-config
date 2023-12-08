@@ -6,6 +6,8 @@
 `e`         -> go over word to left
 `b`         -> go over word to right
 `yt<delim>` -> yank to character
+`u`         -> undo
+`ctrl+r`    -> redo
 
 ## Sessions
 `leader sl`     -> list sessions
@@ -20,4 +22,11 @@
 ## windows and tabs
 `ctrl+r` telescope: open in vertical tab
 `ctrl+w +left/right` open window to left/right
+
+## setup
+- pipx packages
+    - `yay -S python-pipx`
+    - `pipx ensurepath`
+- cmake
+    - `pipx install cmake-language-server`
 
