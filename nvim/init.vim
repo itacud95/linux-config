@@ -142,9 +142,9 @@ nnoremap fe <cmd>NERDTreeFind %<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 let NERDTreeQuitOnOpen=1
 
-lua require("lspconfig").clangd.setup({})
-" lua require("lspconfig").bashls.setup({})
-" lua require('lspconfig').cmake.setup({})
+luafile /home/jk/linux-config/nvim/lsp.lua
+" lua require("lspconfig").clangd.setup({})
+" lua require("lspconfig").cmake.setup({})
 
 nnoremap gd <cmd>lua vim.lsp.buf.declaration()<cr>
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
