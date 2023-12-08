@@ -8,6 +8,7 @@
 `yt<delim>` -> yank to character
 `u`         -> undo
 `ctrl+r`    -> redo
+`viwp`      -> replace word under cursor with buffer
 
 ## Sessions
 `leader sl`     -> list sessions

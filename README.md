@@ -1,7 +1,7 @@
 # linux-config
 My linux config files
 
-Notes: 
+Notes:
 ```
 font-awesome-5 # fonts needed for default waybar
 ```
