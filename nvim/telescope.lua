@@ -7,6 +7,7 @@ require("telescope").setup({
         },
     },
     defaults = {
+        file_ignore_patterns = { "third_party" },
         mappings = {
             i = {
                 ["<c-r>"] = require("telescope.actions").select_vertical,
