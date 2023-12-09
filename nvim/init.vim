@@ -129,6 +129,7 @@ nnoremap fa <cmd>Telescope find_files<cr>
 nnoremap fr <cmd>Telescope find_files find_command=rg,--ignore,--files,--sort,accessed<cr>
 " nnoremap ff <cmd>Telescope frecency workspace=CWD previewer=false<cr>
 " nnoremap ff <cmd>Telescope find_files find_command=rg,--files,--ignore,|,xargs,stat,--format='%X %n',|,sort,-n<cr>
+nnoremap ff <cmd>Telescope find_files find_command=rg,--ignore,--files,--sortr,accessed<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
