@@ -53,7 +53,8 @@
         "when": "editorFocus"
     },
     {
-        "key": "f18",
+        // f18
+        "key": "ctrl+5",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult || inSearchEditor"
     },
@@ -81,7 +82,8 @@
         "command": "workbench.action.focusNextGroup"
     },
     {
-        "key": "f17",
+        // f17
+        "key": "ctrl+4",
         "command": "search.action.focusPreviousSearchResult",
         "when": "hasSearchResult || inSearchEditor"
     },
