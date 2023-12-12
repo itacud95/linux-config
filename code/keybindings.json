@@ -138,16 +138,19 @@
         "command": "workbench.action.closeOtherEditors"
     },
     {
-        "key": "f15",
+        // f15
+        "key": "ctrl+2",
         "command": "actions.findWithSelection"
     },
     {
-        "key": "f16",
+        // f16
+        "key": "ctrl+3",
         "command": "editor.action.nextMatchFindAction",
         "when": "editorFocus"
     },
     {
-        "key": "f14",
+        // f14
+        "key": "ctrl+1",
         "command": "editor.action.previousMatchFindAction",
         "when": "editorFocus"
     },

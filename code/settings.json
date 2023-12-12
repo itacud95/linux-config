@@ -70,7 +70,7 @@
                 "name": "(lldb) test a c++ binary",
                 "type": "lldb-mi",
                 "request": "launch",
-                "target": "./dist/tests.any.elf_parser.linux/test-elf_parser_bin",
+                "target": "./dist/tests.any.ipc.linux/test-ipc-bin",
                 "cwd": "${workspaceRoot}",
             },
         ],
