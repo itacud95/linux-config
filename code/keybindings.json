@@ -59,6 +59,12 @@
         "when": "hasSearchResult || inSearchEditor"
     },
     {
+        // f18
+        "key": "ctrl+0",
+        "command": "search.action.focusNextSearchResult",
+        "when": "hasSearchResult || inSearchEditor"
+    },
+    {
         "key": "ctrl+shift+w",
         "command": "toggleSearchCaseSensitive",
         "when": "searchViewletFocus"
@@ -84,6 +90,12 @@
     {
         // f17
         "key": "ctrl+4",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult || inSearchEditor"
+    },
+    {
+        // f17
+        "key": "ctrl+9",
         "command": "search.action.focusPreviousSearchResult",
         "when": "hasSearchResult || inSearchEditor"
     },

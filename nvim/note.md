@@ -9,6 +9,8 @@
 `u`         -> undo
 `ctrl+r`    -> redo
 `viwp`      -> replace word under cursor with buffer
+`w`         -> move by word to left
+`b`         -> move by word to right
 
 ## Sessions
 `leader sl`     -> list sessions
@@ -31,3 +33,7 @@
 - cmake
     - `pipx install cmake-language-server`
 
+## folding
+- https://github.com/kevinhwang91/nvim-ufo
+- `zc` to fold
+- `zo` to unfold

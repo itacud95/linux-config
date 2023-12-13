@@ -47,7 +47,12 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'kdheepak/lazygit.nvim'
 
-Plug 'RRethy/vim-illuminate'
+Plug 'romgrk/barbar.nvim'
+
+Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+
+Plug 'kevinhwang91/promise-async'
+Plug 'kevinhwang91/nvim-ufo'
 
 call plug#end()
 
@@ -66,10 +71,16 @@ augroup END
 " Map <leader> to a space
 let mapleader = "\<Space>"
 
+" folding
+set foldcolumn=1
+set foldlevel=99
+set foldlevelstart=99
+" set foldenable=true
 
 lua require("auto-save").setup({})
 " lua require("telescope").load_extension("frecency")
 lua require("telescope").load_extension("live_grep_args")
+lua require('ufo').setup({})
 
 luafile /home/jk/linux-config/nvim/possession.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
@@ -86,19 +97,23 @@ nnoremap <leader>sn :lua require("nvim-possession").new()<CR>
 nnoremap <leader>su :lua require("nvim-possession").update()<CR>
 nnoremap <leader>sd :lua require("nvim-possession").delete()<CR>
 
-nnoremap <c-1> :lua require("illuminate").goto_prev_reference()<cr>
-nnoremap <c-2> :lua require("illuminate").goto_next_reference()<cr>
-nnoremap <leader>bg :lua require('illuminate').goto_next_reference()<cr>
+nnoremap <c-1> N
+nnoremap <c-2> *N
+nnoremap <c-3> n
+
+nnoremap lg <cmd>LazyGit<cr>
 
 " https://github.com/numToStr/Comment.nvim
 lua require("Comment").setup()
+lua require('toggle_lsp_diagnostics').init()
+" ToggleDiag
 
 " colorscheme onedark
 " colorscheme flexoki-dark
 " colorscheme onedark
 set background=dark
 colorscheme gruvbox
-set scrolloff=10
+set scrolloff=14
 
 " tab
 set tabstop=4
@@ -124,7 +139,7 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-;> <cmd>Telescope live_grep<cr>
 
 " stop search highlight
-nnoremap <Leader>/ <cmd>:noh<cr>.
+nnoremap <leader>/ <cmd>:noh<cr>.
 " jump back and forth
 nnoremap mm <C-6>
 
@@ -144,6 +159,12 @@ nnoremap fb <cmd>Telescope buffers<cr>
 noremap <C-S-PageUp>  :-tabmove<cr>
 noremap <C-S-PageDown> :+tabmove<cr>
 
+nnoremap <C-PageUp> <cmd>BufferPrevious<cr>
+nnoremap <C-PageDown> <cmd>BufferNext<cr>
+nnoremap <C-S-PageUp> <cmd>BufferMovePrevious<cr>
+nnoremap <C-S-PageDown> <cmd>BufferMoveNext<cr>
+nnoremap <C-k><C-o> <cmd>BufferCloseAllButCurrent<cr>
+
 " NERDTree
 nnoremap fe <cmd>NERDTreeFind %<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
@@ -158,6 +179,7 @@ nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap gf <cmd>lua vim.lsp.buf.format()<cr>
 nnoremap ga <cmd>lua vim.lsp.buf.code_action()<cr>
 nnoremap go <cmd>ClangdSwitchSourceHeader<cr>
+nnoremap gi <cmd>ToggleDiag<cr>
 
 " maybe no longer used
 " luafile /home/jk/linux-config/nvim/complete.lua

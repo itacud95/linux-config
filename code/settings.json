@@ -1,6 +1,6 @@
 {
     // 
-    "window.titleBarStyle": "custom",
+    "window.titleBarStyle": "native",
     "files.autoSave": "onFocusChange",
     "editor.formatOnSaveMode": "modifications",
     "C_Cpp.intelliSenseEngine": "disabled",
@@ -61,7 +61,6 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "clangd.path": "/home/jk/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
-    "window.zoomLevel": 1,
     "launch": {
         "version": "0.2.0",
         "configurations": [
@@ -97,12 +96,16 @@
     "workbench.colorCustomizations": {
         // https://gist.github.com/dcts/5b2af4c8b6918e7d35c4121f11d49fb1
         "editor.background": "#000",
-        "tab.activeBackground": "#000",
+        // "tab.activeBackground": "#000",
         "tab.inactiveBackground": "#000",
         "statusBar.background": "#000",
         "sideBar.background": "#000",
         "activityBar.background": "#000",
         "titleBar.activeBackground": "#000",
     },
-    "editor.cursorSurroundingLines": 12
+    "editor.cursorSurroundingLines": 12,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
 }
