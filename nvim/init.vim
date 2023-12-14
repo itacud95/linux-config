@@ -3,7 +3,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'cjuniet/clang-format.vim'
 Plug 'windwp/nvim-autopairs'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -45,6 +45,7 @@ Plug 'gennaro-tedesco/nvim-possession'
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'kdheepak/lazygit.nvim'
 
 Plug 'romgrk/barbar.nvim'
@@ -53,7 +54,7 @@ Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
-
+Plug 'Mofiqul/vscode.nvim'
 call plug#end()
 
 " chat gpt auto-trim-whitespace
@@ -67,6 +68,13 @@ augroup TrimWhitespace
     autocmd BufWritePre * call TrimWhitespace()
 augroup END
 
+" nvin-tree
+lua vim.g.loaded_netrwPlugin = 1
+lua vim.g.loaded_netrw = 1
+lua vim.opt.termguicolors = true
+" lua require('nvim-tree').setup({})
+nnoremap fe <cmd>NvimTreeFindFile<cr>
+nnoremap <C-b> <cmd>NvimTreeToggle<cr>
 
 " Map <leader> to a space
 let mapleader = "\<Space>"
@@ -87,6 +95,7 @@ luafile /home/jk/linux-config/nvim/telescope.lua
 luafile /home/jk/linux-config/nvim/lualine.lua
 luafile /home/jk/linux-config/nvim/autopairs.lua
 luafile /home/jk/linux-config/nvim/gruvbox.lua
+luafile /home/jk/linux-config/nvim/nvim-tree.lua
 
 " Configure nvim-possession
 let g:nvim_possession_enable_default_mappings = 0
@@ -108,11 +117,11 @@ lua require("Comment").setup()
 lua require('toggle_lsp_diagnostics').init()
 " ToggleDiag
 
-" colorscheme onedark
 " colorscheme flexoki-dark
 " colorscheme onedark
 set background=dark
-colorscheme gruvbox
+" colorscheme gruvbox
+" colorscheme github_dark
 set scrolloff=14
 
 " tab
@@ -139,7 +148,7 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-;> <cmd>Telescope live_grep<cr>
 
 " stop search highlight
-nnoremap <leader>/ <cmd>:noh<cr>.
+" nnoremap <leader>/ <cmd>:noh<cr>.
 " jump back and forth
 nnoremap mm <C-6>
 
@@ -166,8 +175,8 @@ nnoremap <C-S-PageDown> <cmd>BufferMoveNext<cr>
 nnoremap <C-k><C-o> <cmd>BufferCloseAllButCurrent<cr>
 
 " NERDTree
-nnoremap fe <cmd>NERDTreeFind %<cr>
-nnoremap <C-b> <cmd>NERDTreeToggle<cr>
+" nnoremap fe <cmd>NERDTreeFind %<cr>
+" nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 let NERDTreeQuitOnOpen=1
 
 luafile /home/jk/linux-config/nvim/lsp.lua
