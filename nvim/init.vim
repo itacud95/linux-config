@@ -122,6 +122,7 @@ lua require('toggle_lsp_diagnostics').init()
 set background=dark
 " colorscheme gruvbox
 " colorscheme github_dark
+lua require('vscode').load('dark')
 set scrolloff=14
 
 " tab
