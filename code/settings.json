@@ -1,5 +1,5 @@
 {
-    // 
+    //
     "window.titleBarStyle": "native",
     "files.autoSave": "onFocusChange",
     "editor.formatOnSaveMode": "modifications",
@@ -52,7 +52,6 @@
     "explorer.confirmDelete": false,
     "C_Cpp.clang_format_path": "/opt/clang-format-static/clang-format-8",
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Gruvbox Dark Hard",
     "git.suggestSmartCommit": false,
     "git.confirmSync": false,
     "gitlens.mode.active": "zen",
@@ -71,7 +70,7 @@
                 "request": "launch",
                 "target": "./dist/tests.any.ipc.linux/test-ipc-bin",
                 "cwd": "${workspaceRoot}",
-            },
+            }
         ],
         "inputs": [
             {
@@ -95,13 +94,13 @@
     },
     "workbench.colorCustomizations": {
         // https://gist.github.com/dcts/5b2af4c8b6918e7d35c4121f11d49fb1
-        "editor.background": "#000",
+        // "editor.background": "#000",
         // "tab.activeBackground": "#000",
-        "tab.inactiveBackground": "#000",
-        "statusBar.background": "#000",
-        "sideBar.background": "#000",
-        "activityBar.background": "#000",
-        "titleBar.activeBackground": "#000",
+        // "tab.inactiveBackground": "#000",
+        // "statusBar.background": "#000",
+        // "sideBar.background": "#000",
+        // "activityBar.background": "#000",
+        // "titleBar.activeBackground": "#000",
     },
     "editor.cursorSurroundingLines": 12,
     "[html]": {

@@ -2,3 +2,9 @@ manual downloads:
 https://marketplace.visualstudio.com/items?itemName=nemesv.copy-file-name
 https://marketplace.visualstudio.com/items?itemName=DavidSanders.search-under-cursor
 
+Wayland: 
+use vscodium config file under `~/.config/codium-flags.conf`: 
+```
+--enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
+--ozone-platform-hint=auto
+```

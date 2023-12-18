@@ -65,6 +65,10 @@
         "when": "hasSearchResult || inSearchEditor"
     },
     {
+        "key": "ctrl+r",
+        "command": "search.action.focusSearchList"
+    },
+    {
         "key": "ctrl+shift+w",
         "command": "toggleSearchCaseSensitive",
         "when": "searchViewletFocus"
@@ -356,6 +360,25 @@
     {
         "key": "f19",
         "command": "extension.searchUnderCursor"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment && !isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.terminal.runRecentCommand",
+        "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
     },
     // {
     //     "key": "f19",
