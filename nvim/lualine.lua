@@ -22,12 +22,7 @@ require('lualine').setup {
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {
         { "filename", path = 1 },
-        {
-            require("nvim-possession").status,
-            cond = function()
-                return require("nvim-possession").status() ~= nil
-            end,            
-        },
+        {require('auto-session.lib').current_session_name},
     },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},

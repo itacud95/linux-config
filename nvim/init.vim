@@ -18,7 +18,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
 " themes
@@ -28,7 +27,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'ellisonleao/gruvbox.nvim'
 
 Plug 'Pocco81/auto-save.nvim'
-" Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
 Plug 'numToStr/Comment.nvim'
@@ -36,7 +34,6 @@ Plug 'numToStr/Comment.nvim'
 Plug 'numToStr/Comment.nvim'
 
 Plug 'ibhagwan/fzf-lua'
-Plug 'gennaro-tedesco/nvim-possession'
 Plug 'rmagatti/auto-session'
 
 Plug 'nvim-lualine/lualine.nvim'
@@ -110,7 +107,6 @@ set foldlevelstart=99
 " set foldenable=true
 
 lua require("auto-save").setup({})
-lua require("telescope").load_extension("live_grep_args")
 
 luafile /home/jk/linux-config/nvim/auto-session.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
@@ -124,17 +120,11 @@ luafile /home/jk/linux-config/nvim/barbar.lua
 " Configure nvim-possession
 let g:nvim_possession_enable_default_mappings = 0
 
-" Map commands to leader key
-nnoremap <leader>sl :lua require("nvim-possession").list()<CR>
-nnoremap <leader>sn :lua require("nvim-possession").new()<CR>
-nnoremap <leader>su :lua require("nvim-possession").update()<CR>
-nnoremap <leader>sd :lua require("nvim-possession").delete()<CR>
-
 nnoremap <c-1> N
 nnoremap <c-2> *N
 nnoremap <c-3> n
 
-nnoremap lg <cmd>LazyGit<cr>
+nnoremap <leader>lg <cmd>LazyGit<cr>
 
 " https://github.com/numToStr/Comment.nvim
 lua require("Comment").setup()
@@ -185,7 +175,7 @@ nnoremap fr <cmd>Telescope frecency workspace=CWD previewer=false<cr>
 nnoremap ff <cmd>Telescope find_files find_command=rg,--ignore,--files,--sortr,accessed<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
-nnoremap fb <cmd>Telescope buffers<cr>
+nnoremap fb <cmd>Telescope file_browser<cr>
 
 " tabs
 noremap <C-S-PageUp>  :-tabmove<cr>
