@@ -26,6 +26,10 @@
 `ctrl+r` telescope: open in vertical tab
 `ctrl+w +left/right` open window to left/right
 
+## searching
+`ctrl+l`    stop search
+
+
 ## setup
 - pipx packages
     - `yay -S python-pipx`

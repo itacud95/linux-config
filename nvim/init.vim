@@ -48,14 +48,21 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'kdheepak/lazygit.nvim'
 
+" auto open tabs
 Plug 'romgrk/barbar.nvim'
 
 Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
 Plug 'kevinhwang91/promise-async'
-Plug 'kevinhwang91/nvim-ufo'
+" Plug 'kevinhwang91/nvim-ufo'
 Plug 'Mofiqul/vscode.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 call plug#end()
+
+" Map <leader> to a space
+let mapleader = "\<Space>"
 
 " chat gpt auto-trim-whitespace
 function! TrimWhitespace()
@@ -68,16 +75,37 @@ augroup TrimWhitespace
     autocmd BufWritePre * call TrimWhitespace()
 augroup END
 
+" debugging
+" https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+" https://github.com/mfussenegger/nvim-dap
+" https://davelage.com/posts/nvim-dap-getting-started/
+
+nnoremap <silent> <F5> <cmd>lua require'dap'.continue()<cr>
+nnoremap <silent> <F10> <cmd>lua require'dap'.step_over()<cr>
+nnoremap <silent> <F11> <cmd>lua require'dap'.step_into()<cr>
+nnoremap <silent> <F12> <cmd>lua require'dap'.step_out()<cr>
+
+nnoremap <leader>b <cmd>lua require('dap').toggle_breakpoint()<cr>
+
+" require("dapui").open()
+" require("dapui").close()
+" require("dapui").toggle()
+
+" lua require('dap').toggle_breakpoint()
+
+" nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+" nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+" nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+" nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+
+" nnoremap <leader>sl :lua require("nvim-possession").list()<CR>
+
 " nvin-tree
 lua vim.g.loaded_netrwPlugin = 1
 lua vim.g.loaded_netrw = 1
 lua vim.opt.termguicolors = true
-" lua require('nvim-tree').setup({})
 nnoremap fe <cmd>NvimTreeFindFile<cr>
 nnoremap <C-b> <cmd>NvimTreeToggle<cr>
-
-" Map <leader> to a space
-let mapleader = "\<Space>"
 
 " folding
 set foldcolumn=1
@@ -88,7 +116,7 @@ set foldlevelstart=99
 lua require("auto-save").setup({})
 " lua require("telescope").load_extension("frecency")
 lua require("telescope").load_extension("live_grep_args")
-lua require('ufo').setup({})
+" lua require('ufo').setup({})
 
 luafile /home/jk/linux-config/nvim/possession.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
@@ -96,6 +124,8 @@ luafile /home/jk/linux-config/nvim/lualine.lua
 luafile /home/jk/linux-config/nvim/autopairs.lua
 luafile /home/jk/linux-config/nvim/gruvbox.lua
 luafile /home/jk/linux-config/nvim/nvim-tree.lua
+luafile /home/jk/linux-config/nvim/dap.lua
+luafile /home/jk/linux-config/nvim/barbar.lua
 
 " Configure nvim-possession
 let g:nvim_possession_enable_default_mappings = 0
