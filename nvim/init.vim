@@ -3,12 +3,8 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'cjuniet/clang-format.vim'
 Plug 'windwp/nvim-autopairs'
-" Plug 'preservim/nerdtree'
-
-" https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" https://github.com/nvim-telescope/telescope.nvim
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
@@ -22,7 +18,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
@@ -42,6 +37,7 @@ Plug 'numToStr/Comment.nvim'
 
 Plug 'ibhagwan/fzf-lua'
 Plug 'gennaro-tedesco/nvim-possession'
+Plug 'rmagatti/auto-session'
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -114,11 +110,9 @@ set foldlevelstart=99
 " set foldenable=true
 
 lua require("auto-save").setup({})
-" lua require("telescope").load_extension("frecency")
 lua require("telescope").load_extension("live_grep_args")
-" lua require('ufo').setup({})
 
-luafile /home/jk/linux-config/nvim/possession.lua
+luafile /home/jk/linux-config/nvim/auto-session.lua
 luafile /home/jk/linux-config/nvim/telescope.lua
 luafile /home/jk/linux-config/nvim/lualine.lua
 luafile /home/jk/linux-config/nvim/autopairs.lua
@@ -145,7 +139,6 @@ nnoremap lg <cmd>LazyGit<cr>
 " https://github.com/numToStr/Comment.nvim
 lua require("Comment").setup()
 lua require('toggle_lsp_diagnostics').init()
-" ToggleDiag
 
 " colorscheme flexoki-dark
 " colorscheme onedark
@@ -159,7 +152,6 @@ set scrolloff=14
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 
 inoremap jj <Esc>
 
@@ -198,6 +190,7 @@ nnoremap fb <cmd>Telescope buffers<cr>
 " tabs
 noremap <C-S-PageUp>  :-tabmove<cr>
 noremap <C-S-PageDown> :+tabmove<cr>
+nnoremap <C-w> <cmd>BufferClose<cr>
 
 nnoremap <C-PageUp> <cmd>BufferPrevious<cr>
 nnoremap <C-PageDown> <cmd>BufferNext<cr>
