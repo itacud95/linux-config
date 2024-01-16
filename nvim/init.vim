@@ -17,7 +17,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
 " themes
@@ -178,7 +177,6 @@ nnoremap fr <cmd>Telescope frecency workspace=CWD previewer=false<cr>
 nnoremap ff <cmd>Telescope find_files find_command=rg,--ignore,--files,--sortr,accessed<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
-" nnoremap fb <cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>
 nnoremap fb <cmd>Neotree reveal<cr>
 
 " tabs
