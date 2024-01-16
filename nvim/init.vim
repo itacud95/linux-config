@@ -17,7 +17,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-file-browser.nvim'
+" Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'airblade/vim-gitgutter'
 
 " themes
@@ -38,7 +38,9 @@ Plug 'rmagatti/auto-session'
 
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'nvim-tree/nvim-tree.lua'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
+" Plug 'nvim-tree/nvim-tree.lua'
 Plug 'kdheepak/lazygit.nvim'
 
 " auto open tabs
@@ -113,7 +115,8 @@ luafile /home/jk/linux-config/nvim/telescope.lua
 luafile /home/jk/linux-config/nvim/lualine.lua
 luafile /home/jk/linux-config/nvim/autopairs.lua
 luafile /home/jk/linux-config/nvim/gruvbox.lua
-luafile /home/jk/linux-config/nvim/nvim-tree.lua
+" luafile /home/jk/linux-config/nvim/nvim-tree.lua
+luafile /home/jk/linux-config/nvim/neo-tree.lua
 luafile /home/jk/linux-config/nvim/dap.lua
 luafile /home/jk/linux-config/nvim/barbar.lua
 
@@ -175,7 +178,8 @@ nnoremap fr <cmd>Telescope frecency workspace=CWD previewer=false<cr>
 nnoremap ff <cmd>Telescope find_files find_command=rg,--ignore,--files,--sortr,accessed<cr>
 nnoremap fo <cmd>Telescope oldfiles<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
-nnoremap fb <cmd>Telescope file_browser<cr>
+" nnoremap fb <cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>
+nnoremap fb <cmd>Neotree reveal<cr>
 
 " tabs
 noremap <C-S-PageUp>  :-tabmove<cr>
