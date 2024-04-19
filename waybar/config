@@ -13,6 +13,8 @@
     ],
  
     "modules-center": [
+        "clock#time",
+        "clock#date",
     ],
 
     "modules-right": [
@@ -21,14 +23,13 @@
         "memory",
         "cpu",
         "pulseaudio",
-        "custom/keyboard-layout",
+        // "custom/keyboard-layout",
         "battery",
-        //"custom/PBPbattery",
+        // "custom/PBPbattery",
         "backlight#icon",
         "backlight#value",
-        "clock",
         "tray",
-        //"custom/weather",
+        // "custom/weather",
         "custom/power",
     ],
 
@@ -61,11 +62,16 @@
         "format": "{}",
     },
 
-    "clock": {
+    "clock#time": {
         "interval": 1,
-        "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-        "format": "{: %Y-%m-%d %H:%M:%S}",
-        "tooltip-format": "{:%e %B %Y}"
+        "format": "{:%H:%M:%S}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+      "interval": 10,
+      "format": "  {:%e %b %Y}", // Icon: calendar-alt
+      "tooltip-format": "{:%e %B %Y}"
     },
 
     "cpu": {
@@ -154,10 +160,8 @@
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
     },
 
-    // to use the weather module replace <your_location> with your city or town
-    // note: do not use spaces: new york would be newyork
     "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh <your_location>", 
+        "exec": "~/.config/waybar/scripts/weather.sh oslo", 
         "return-type": "json",
         "interval": 600,
     },
