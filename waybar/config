@@ -13,21 +13,21 @@
     ],
  
     "modules-center": [
-        "clock#time",
-        "clock#date",
+        "idle_inhibitor",
+        "backlight#icon",
+        "backlight#value",
+        "pulseaudio",
     ],
 
     "modules-right": [
         "network",
-        "idle_inhibitor",
         "memory",
         "cpu",
-        "pulseaudio",
         // "custom/keyboard-layout",
         "battery",
         // "custom/PBPbattery",
-        "backlight#icon",
-        "backlight#value",
+        "clock#date",
+        "clock#time",
         "tray",
         // "custom/weather",
         "custom/power",
@@ -44,6 +44,7 @@
     },
 
     "battery": {
+        "interval": 1,
         "states": {
             // "good": 95,
             "warning": 30,
