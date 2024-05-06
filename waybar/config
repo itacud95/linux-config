@@ -20,6 +20,7 @@
     ],
 
     "modules-right": [
+        "custom/ccache",
         "network",
         "memory",
         "cpu",
@@ -63,6 +64,12 @@
         "format": "{}",
     },
 
+    "custom/ccache": {
+        "interval": 2,
+        "exec": "ccache -s | grep -m1 Hits | grep -o '[0-9].*'",
+        "format": "{}"
+    },
+
     "clock#time": {
         "interval": 1,
         "format": "{:%H:%M:%S}",
@@ -70,9 +77,11 @@
     },
 
     "clock#date": {
+      "comment": "calendar - Icon: calendar-alt",
       "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
+      "format": "  {:%e %b %Y}",
+      "tooltip-format": "{:%e %B %Y}", 
+      "on-click": "firefox -new-tab \"https://calendar.google.com/calendar/u/0/r\""
     },
 
     "cpu": {
