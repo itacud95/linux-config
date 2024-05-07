@@ -102,9 +102,18 @@
         // "activityBar.background": "#000",
         // "titleBar.activeBackground": "#000",
     },
-    "editor.cursorSurroundingLines": 12,
+    "editor.cursorSurroundingLines": 15,
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "update.mode": "none",
+    "workbench.colorTheme": "Default Dark+",
+    "git.openRepositoryInParentFolders": "never",
     "window.zoomLevel": 1,
+    "editor.stickyScroll.enabled": false,
+    "editor.inlayHints.enabled": "on",
+    "workbench.colorCustomizations": {
+        "editorOverviewRuler.errorForeground": "#0000"
+    }
+    
 }
