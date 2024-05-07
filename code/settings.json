@@ -114,6 +114,8 @@
     "editor.inlayHints.enabled": "on",
     "workbench.colorCustomizations": {
         "editorOverviewRuler.errorForeground": "#0000"
-    }
+        "editorOverviewRuler.warningForeground": "#0000"
+    },
+    "editor.minimap.enabled": false
     
 }
