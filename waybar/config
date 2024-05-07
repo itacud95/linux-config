@@ -21,6 +21,7 @@
 
     "modules-right": [
         "custom/ccache",
+        "custom/ccache_used",
         "network",
         "memory",
         "cpu",
@@ -67,7 +68,12 @@
     "custom/ccache": {
         "interval": 2,
         "exec": "ccache -s | grep -m1 Hits | grep -o '[0-9].*'",
-        "format": "{}"
+        "format": "hits: {}|"
+    },
+    "custom/ccache_used": {
+        "interval": 2,
+        "exec": "ccache -s | grep -w Cache | awk -F '[()]' '{print $(NF-1)}'",
+        "format": "used: {}|"
     },
 
     "clock#time": {
