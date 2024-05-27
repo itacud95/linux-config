@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 
 import os
+import argparse
 
 
+# source_files are relative to this directory
+# target_dir is relative to $HOME directory
 def create_symlinks(source_files, target_dir):
+    home_directory = os.path.expanduser("~")
+    target_dir = home_directory + "/" + target_dir
     if not os.path.exists(target_dir):
         raise Exception(f"{target_dir} does not exist")
 
@@ -34,7 +39,39 @@ def create_symlinks(source_files, target_dir):
         print(f"Created symlink for {source_path}.")
 
 
-# Example usage:
-source_files = ["i3/config"]
-target_dir = "/home/jk/linux-config/testdir"
-create_symlinks(source_files, target_dir)
+def setup_i3():
+    source_files = ["i3/config"]
+    target_dir = ".config/i3"
+    create_symlinks(source_files, target_dir)
+
+
+def option_2():
+    print("You have selected Option 2.")
+    # Add logic for Option 2 here
+
+
+def option_3():
+    print("You have selected Option 3.")
+    # Add logic for Option 3 here
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Choose one of the available options.")
+
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--i3", action="store_true")
+    group.add_argument("--option2", action="store_true", help="Select Option 2")
+    group.add_argument("--option3", action="store_true", help="Select Option 3")
+
+    args = parser.parse_args()
+
+    if args.i3:
+        setup_i3()
+    elif args.option2:
+        option_2()
+    elif args.option3:
+        option_3()
+
+
+if __name__ == "__main__":
+    main()
