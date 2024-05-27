@@ -1,6 +1,11 @@
 # linux-config
 My linux config files
 
+Set default browser
+```
+xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http
+```
+
 Notes:
 ```
 font-awesome-5 # fonts needed for default waybar
