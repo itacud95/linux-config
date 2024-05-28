@@ -22,10 +22,22 @@ yay -S android-sdk-build-tools
 yay -S android-sdk android-studio
 cd /opt/android-sdk
 sudo chown -R `id -un`:`id -gn` .
+```
+Remove orphaned packages
+```
+yay -Qdt
+yay -Rns $(yay -Qdtq)
+```
 
+# Pipewire
+https://www.maketecheasier.com/install-configure-pipewire-linux/
+```
+systemctl --user --now disable pulseaudio.service pulseaudio.socket
+systemctl --user --now enable pipewire pipewire-pulse pipewire-media-session
 ```
 
 ```
 sudo ydotoold &
 while true; do sudo ydotool mousemove --absolute $RANDOM $RANDOM; sleep 1; done
 ```
+
