@@ -49,3 +49,19 @@ cat ~/.config/code-flags.conf
 --enable-features=WaylandWindowDecorations
 --ozone-platform-hint=auto
 ```
+
+# audio
+Microphone check (to speaker):
+```
+# route mic to speaker
+pactl load-module module-loopback latency_msec=1
+# stop
+pactl unload-module module-loopback
+```
+Enable multiprofile for blt headset
+https://wiki.archlinux.org/title/bluetooth_headset
+```
+# edit /etc/bluetooth/main.conf
+[General]
+MultiProfile=multiple
+```
