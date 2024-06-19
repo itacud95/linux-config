@@ -16,7 +16,7 @@ set $volume_up $(pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume)
 set $volume_mute $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p")
 set $mic_mute $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
 
-# Your preferred terminal emulators
+# Your preferred terminal emulatorsq
 # set $term-float xfce4-terminal
 set $term-float kitty
 
@@ -168,16 +168,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $right resize grow width 10px
-    bindsym $up resize shrink height 10px
-    bindsym $down resize grow height 10px
+    bindsym $left resize shrink width 50px
+    bindsym $right resize grow width 50px
+    bindsym $up resize shrink height 50px
+    bindsym $down resize grow height 50px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Right resize grow width 10px
-    bindsym Up resize shrink height 10px
-    bindsym Down resize grow height 10px
+    bindsym Left resize shrink width 50px
+    bindsym Right resize grow width 50px
+    bindsym Up resize shrink height 50px
+    bindsym Down resize grow height 50px
 
     # Return to default mode
     bindsym Return mode "default"
