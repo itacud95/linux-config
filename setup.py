@@ -45,9 +45,11 @@ def setup_i3():
     create_symlinks(source_files, target_dir)
 
 
-def option_2():
+def setup_sway():
     print("You have selected Option 2.")
-    # Add logic for Option 2 here
+    source_files = ["sway/config", "sway/config.d"]
+    target_dir = ".config/sway"
+    create_symlinks(source_files, target_dir)
 
 
 def option_3():
@@ -60,15 +62,15 @@ def main():
 
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--i3", action="store_true")
-    group.add_argument("--option2", action="store_true", help="Select Option 2")
+    group.add_argument("--sway", action="store_true", help="Select Option 2")
     group.add_argument("--option3", action="store_true", help="Select Option 3")
 
     args = parser.parse_args()
 
     if args.i3:
         setup_i3()
-    elif args.option2:
-        option_2()
+    elif args.sway:
+        setup_sway()
     elif args.option3:
         option_3()
 
