@@ -238,7 +238,7 @@ workspace_auto_back_and_forth yes
 focus_follows_mouse no
 
 # yay -S cliphist rofi wtype
-bindsym $mod+g exec cliphist list | rofi -dmenu -theme solarized -font "$gui-font" -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl
+bindsym $mod+g exec cliphist list | rofi -i -dmenu -theme solarized -font "$gui-font" -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl
 bindsym $mod+Shift+g exec cliphist wipe
 bindsym $mod+y move workspace to output right
 bindsym $mod+Shift+Return exec kitty --title tempterm
