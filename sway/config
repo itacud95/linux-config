@@ -8,5 +8,7 @@
 # user config directory
 include $HOME/.config/sway/config.d/*
 
-# only enable this if every app you use is compatible with wayland
-# xwayland disable
+# file ignored by git
+include $HOME/linux-config/sway/device_config/device_config
+# content: include $HOME/linux-config/sway/device_config/laptop.config
+
